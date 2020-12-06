@@ -30,7 +30,9 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'UserCrud');
+
+$routes->get('calculator/(:any)/(:any)', 'Home::calcNumbers/$1/$2');
 
 // CRUD RESTful Routes
 $routes->group('demo', function($routes){
